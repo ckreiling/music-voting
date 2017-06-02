@@ -1,6 +1,7 @@
 node_modules
 .idea
 webpack-stats.json
+/assets/bundles
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
