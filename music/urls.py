@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     # includes the users group, for retrieving a list of all the users
-    url(r'^system/', include('authentication.urls')),
-    # necessary for authentication to work within the rest framework
+    url(r'^system/', include('system.urls')),
+    # necessary for authentication page to load correctly
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

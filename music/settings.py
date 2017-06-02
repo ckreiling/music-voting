@@ -39,13 +39,14 @@ INSTALLED_APPS = [
     # Rest framework application
     'rest_framework',
     # My applications
+
     # Spotify player application - only controls Spotify playback,
     # does not mandate queue system. Uses the "Spotipy" library to
     # authenticate, but there is no player support in Spotipy so
     # those requests are made manually
     'spotify-player',
     # Groups and users are stored and serialized HERE
-    'authentication'
+    'system'
 ]
 
 MIDDLEWARE = [
