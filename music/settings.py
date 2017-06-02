@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Rest framework application
     'rest_framework',
+    # Integrates Webpack with Django - loads the React static assets
+    'webpack_loader',
     # My applications
 
     # Spotify player application - only controls Spotify playback,
@@ -48,6 +50,19 @@ INSTALLED_APPS = [
     # Groups and users are stored and serialized HERE
     'system'
 ]
+
+STATICFILES_DIRS = (
+    # This lets Django's collectstatic store our bundles
+    os.path.join(BASE_DIR, 'assets'),
+)
+
+# Config for the webpack loader
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -73,7 +88,7 @@ ROOT_URLCONF = 'music.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

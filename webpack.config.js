@@ -34,7 +34,7 @@ module.exports = {
       // a regexp that tells webpack to use the following loaders on all
       // .js and .jsx files
       {
-        text: /\.jsx?$/,
+        test: /\.jsx?$/,
         // Definitely don't want babel to transpile all the files in node_modules
         exclude: /node_modules/,
         // use the Babel loader
@@ -48,9 +48,9 @@ module.exports = {
   },
 
   resolve: {
-    // tells webpack where to look for modules
-    modulesDirectories: ['node_modules'],
+    //tells webpack where to look for modules
+    modules: ['node_modules'],
     //extensions that should be used to resolve modules
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   }
 };
