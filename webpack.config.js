@@ -40,17 +40,17 @@ module.exports = {
         // use the Babel loader
         loader: 'babel-loader',
         query: {
-          // specify that we will be dealing with React code
-          presets: ['react']
+          // specify that we will be dealing with React code, es2015, and es6
+          presets: ['es2015', 'stage-0', 'react']
         }
       }
     ]
   },
 
   resolve: {
-    //tells webpack where to look for modules
+    // tells webpack where to look for modules
     modules: ['node_modules'],
-    //extensions that should be used to resolve modules
+    // extensions that should be used to resolve modules
     extensions: ['.js', '.jsx']
   }
 };
