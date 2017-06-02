@@ -14,10 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    # includes the users group, for retrieving a list of all the users
+    # URL for the React app to be accessed from
+    url(r'^', TemplateView.as_view(template_name='index.html')),
+    # Main User and Group system route
     url(r'^system/', include('system.urls')),
-    # necessary for authentication page to load correctly
+    # Loads the authentication page properly
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

@@ -9,9 +9,8 @@ class UserList extends React.Component {
    */
   constructor(props) {
     super(props);
+    this.state = {data: null};
   }
-
-  state = {data: null};
 
   /**
    * Load the users form the server by making an
@@ -37,7 +36,7 @@ class UserList extends React.Component {
     setInterval(this.loadUsersFromServer, this.props.pollInterval);
   };
 
-  render() {
+  render = () => {
     if (this.state.data) {
       console.log('Users retrieved');
       var userNodes = this.state.data.results.map(function (user) {
@@ -59,4 +58,4 @@ class UserList extends React.Component {
   }
 }
 
-ReactDOM.render(<UserList url={"/system/users.json"} pollInterval={1000}/>, document.getElementById('container'));
+ReactDOM.render(<UserList url={"/system/users.json/"} pollInterval={3000}/>, document.getElementById('container'));

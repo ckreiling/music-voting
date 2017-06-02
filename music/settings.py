@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 ]
 
 STATICFILES_DIRS = (
-    # This lets Django's collectstatic store our bundles
+    # This lets Django's collectstatic store the JavaScript & JSX bundles
     os.path.join(BASE_DIR, 'assets'),
 )
 
